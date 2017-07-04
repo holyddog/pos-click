@@ -1,0 +1,16 @@
+<div id="wrapper" class="d-flex flex-column">
+    <header class="d-flex flex-row bg-red">
+        <a (click)="menu()" class="btn-icon align-self-center d-flex text-center hidden-md-up">
+            <i class="text-white material-icons">menu</i>
+        </a>
+        <div class="align-self-center col text-white text-center typography-subheading">{{title}}</div>
+    </header>
+    <main class="col">
+        <aside>
+            <a *ngFor="let c of categories" class="menu-cat">{{c.name}}</a>
+        </aside>
+        <div id="content" class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>
