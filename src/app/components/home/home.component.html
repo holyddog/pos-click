@@ -1,4 +1,4 @@
-<div class="row">
+<!--<div class="row">
     <div class="col-md-4">
         <div class="paper" (click)="open()"><p>Molestie labore hymenaeos culpa exercitation necessitatibus aperiam impedit, eu, hic conubia dictumst non ad, potenti sequi delectus accusantium, alias incididunt. Cum, suspendisse libero hymenaeos porro animi pede, sapiente reiciendis pede, porta mollit odit praesent cumque pulvinar, magna, consequuntur eius soluta, ab esse modi excepturi netus labore curae et, urna quod, ipsum diam explicabo ullamcorper? Facilis, reiciendis dolorem, eos ultricies perspiciatis, risus faucibus? Ridiculus. Elit, id parturient aliquet fusce accusamus pariatur hic malesuada, quisque mus quod sed esse, hymenaeos, eos cras. Nesciunt rem proident minima, sodales omnis dictumst aliqua interdum similique voluptatibus pellentesque. Quia repellat doloribus porro, lectus tempus orci risus.</p></div>
     </div>
@@ -8,4 +8,87 @@
     <div class="col-md-4">
         <div class="paper" (click)="open()"><p>Morbi ea ornare ad, error. Beatae occaecat fermentum lorem, iaculis? Faucibus phasellus quod iste torquent, repellendus, facere repudiandae? Fuga, tenetur officia lacus. Excepteur perspiciatis hic risus soluta suscipit? Ab sed. Mattis totam. Incididunt tempus iusto elit ipsum dignissim, sed? Nullam earum, amet. Blandit excepturi condimentum magni sit soluta minus possimus, sociosqu nihil molestie debitis magnis nonummy venenatis accumsan perspiciatis quidem, diam a mollis nostrud praesent congue sapiente adipiscing eiusmod! Magni? Odio nunc illo do adipiscing minus maxime suscipit! Dolore ac quidem parturient sodales velit? Maecenas do earum eros, vivamus ullamcorper aut, cubilia quisque blanditiis dictum viverra mollis ullamcorper maiores imperdiet.</p></div>
     </div>
+</div>-->
+<div class="row">
+     <table>
+             <tr>
+                    <td><p>Search</p></td> 
+                    <td> <input #idproduct width="300px" (keyup.enter)="searchproduct(idproduct.value)"></td>
+                    <td><button (click)="searchproduct(idproduct.value)">search</button></td>
+            </tr>
+        </table>
 </div>
+<div class="row">
+        <h1>Welcome to market shop</h1>
+</div>
+<div class="row">
+        <div class="col-md-8">
+            <span *ngIf="viewtable">
+                <div class="row">
+                    <div class="col-sm-4"><h3>Product</h3></div>
+                    <div class="col-sm-4 offset-sm-4"><button (click)="changeview()" class="w3-button btn-danger btn-md">LIST</button></div>
+                </div>
+            <div *ngFor="let c of products" class="menu-cat paper">
+                <div class="row" (click)="openproduct(c.id)">
+                    <div class="col-sm-6">
+                    <img [src]="pressnullpic(c.thumbnailPath)" style ="max-width:200px;max-height:200px;"/>
+                </div>
+                <div class="col-sm-6">
+                        <p>name: {{c.name}} </p>
+                        <p>id: {{c.id}}</p>
+                        <h4>price: {{c.defaultPrice}}</h4>
+                </div>
+            </div>                  
+            </div>
+            </span>
+            <span *ngIf="!viewtable">
+                <div class="row">
+                    <div class="col-md-4"><h3>Product</h3></div>
+                    <div class="col-md-4 offset-md-4"><button (click)="changeview()" class="w3-button btn-danger btn-md">GRID</button></div>
+                </div>
+                <div class="list-items">
+                    <div class="list-item menu-cat paper" *ngFor="let c of products" style ="width:200px;height:400px;" >
+                        <img [src]="pressnullpic(c.thumbnailPath)" style ="max-width:180px;max-height:180px;"/>
+                        <p>name: {{c.name}} </p>
+                        <p>id: {{c.id}}</p>
+                        <h4>price: {{c.defaultPrice}}</h4>
+                        <button (click)="openproduct(c.id)" class="w3-button btn-danger btn-md">DETAIL</button>
+                    </div>
+                </div>
+            </span>
+            <div class="row">
+                    <div class="col-sm-4 offset-sm-4"><a>page 1</a></div>
+                    <span *ngIf="this.products.length >= 9">
+                        <div class="col-sm-4"><button (click)=" opennext()" class="w3-button btn-danger btn-md">NEXT</button></div>
+                    </span>
+                    
+            </div>
+            
+
+        </div >
+        <div class="col-md-4">
+            <h3>Cart Product</h3>
+            <div *ngFor="let c of orderproducts" class="menu-cat paper" (click)="openproduct(c.id)">
+                <p>name: {{c.name}} </p>
+                <p>price: {{c.defaultPrice}}</p>
+                <p>id: {{c.id}}</p>
+            </div>
+            <button (click)="opencart()" class="w3-button btn-danger btn-md w3-hover-blue">CART</button>
+        </div >
+        <div id="content" class="container-fluid">
+            <router-outlet></router-outlet>
+            
+        </div>
+    </div>
+<!--    <div class="card-deck">
+        <div class="card" *ngFor="let c of products" style ="width:200px;height:400px;" >
+            <img class="card-img-top" [src]="pressnullpic(c.thumbnailPath)" style ="max-width:180px;max-height:180px;"/>
+            <div class="card-block">
+             <p>name: {{c.name}} </p>
+             <p>price: {{c.defaultPrice}}</p>
+             <p>id: {{c.id}}</p>
+             <button (click)="openproduct(c.id)" class="w3-button btn-danger btn-md">DETAIL</button>
+            </div>
+         </div>
+    
+</div>-->

@@ -3,14 +3,23 @@
         <a (click)="menu()" class="btn-icon align-self-center d-flex text-center hidden-md-up">
             <i class="text-white material-icons">menu</i>
         </a>
-        <div class="align-self-center col text-white text-center typography-subheading">{{title}}</div>
+        <div class="align-self-center col text-white text-center typography-subheading" (click)="backtohome()">{{title}}</div>
+        <div (click)="gotosearch()" class="text-white w3-hover-blue" ><h3><i class="material-icons">search</i></h3></div>
+        <div (click)="openlogin()" class="text-white w3-hover-blue"><h3><i class="material-icons">account_circle</i></h3></div>
+        <div (click)="gotocart()" class="text-white w3-hover-blue" ><h3><i class="material-icons">shopping_cart</i>{{cartvalue}}</h3></div>
     </header>
     <main class="col">
         <aside>
-            <a *ngFor="let c of categories" class="menu-cat">{{c.name}}</a>
+            <a class="menu-cat floatmenu"><h4 class="w3-hover-blue" (click)="backtohome()" >Home</h4></a>            
+            <a *ngFor="let c of categories" class="menu-cat floatmenu"><p class="w3-hover-red" (click)="selectCatagory(c)">{{c.name}}</p></a>
         </aside>
         <div id="content" class="container-fluid">
             <router-outlet></router-outlet>
         </div>
     </main>
+    <footer class="d-flex flex-row bg-red">
+        <div (click)="backtobefore()" class="text-white w3-hover-blue" ><h3><i class="material-icons">keyboard_arrow_left</i></h3></div>
+        <div class="align-self-center col text-white text-center typography-subheading">created by SENATE</div>
+
+    </footer>
 </div>
