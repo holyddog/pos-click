@@ -4,15 +4,15 @@ import { DetailproductService } from '../../services/detailproduct.service';
 import { AppComponent } from '../../app.component';
 
 @Component({
-    selector: 'product-component',
-    templateUrl: 'product.component.html'
+    selector: 'productdetail-component',
+    templateUrl: 'productdetail.component.html'
 })
-export class ProductComponent implements OnInit {
-     product: any = {};
-     userId: any;
-     quantity = 1;
-     searchms ='';
-     found = false;
+export class ProductdetailComponent implements OnInit {
+    product: any = {};
+    userId: any;
+    quantity = 1;
+    searchms ='';
+    found = false;
     //constructor(private router: Router) { }
 
     constructor(private productService: DetailproductService, private router: Router,private activatedRoute: ActivatedRoute,private app:AppComponent) {}
@@ -30,7 +30,7 @@ export class ProductComponent implements OnInit {
                 else{
                      this.searchms ='not found';
                      this.found = false;
-                }
+                }            
             });
     }
     addpic(): any{
@@ -59,7 +59,7 @@ export class ProductComponent implements OnInit {
          sessionStorage.setItem('cart',JSON.stringify(b));
          this.app.checkCartvalue();
          //this.router.navigate(['/']);
-         window.history.back();
+         this.quantity=1;
     }
     increaseproduct(){
         this.quantity++;
@@ -69,9 +69,14 @@ export class ProductComponent implements OnInit {
             this.quantity--;
         }
     }
-    searchproduct(id:any){
+    addProductDetails(){
+        if(this.product.rProductDetails != undefined){
+            return this.product.rProductDetails[0];
+        }
+    }
+    searchproduct(id:number){
         if(!isNaN(id)){
-            this.router.navigate(['/product', id]);
+            this.router.navigate(['/detailproduct', id]);
             this.productService.list(id)
             .then((data: any) => {
               if (data.result == "SUCCESS") {
@@ -79,13 +84,13 @@ export class ProductComponent implements OnInit {
                   this.found = true;
               }
             else{
-                this.searchms ="not found";
+                this.searchms = "not found";
             }
             });
         }
-        if(id == "detail"){
-            this.router.navigate(['/detailproduct', this.userId]);
-        }
         
+    }
+    gotocreate(){
+        this.router.navigate(['/newproduct']);
     }
 }

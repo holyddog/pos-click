@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
+import { AppComponent } from '../../app.component';
 
 @Component({
     selector: 'home-component',
@@ -10,13 +11,13 @@ export class HomeComponent implements OnInit {
 
     products: any= [];
     orderproducts: any[];
-    viewtable = true;
+    viewtable = this.app.viewtable;
     changeview(){
-        this.viewtable = !this.viewtable;
+        this.viewtable = this.app.changeview();
     }
     //constructor(private router: Router) { }
 
-    constructor(private productService: ProductService, private router: Router) {}
+    constructor(private productService: ProductService, private router: Router,private app:AppComponent) {}
 
     ngOnInit() {
         this.orderproducts = JSON.parse(sessionStorage.getItem('cart'));
@@ -38,7 +39,7 @@ export class HomeComponent implements OnInit {
     }
 
     open() {
-        this.router.navigate(['/product', 1]);
+        this.router.navigate(['/home', 1]);
     }
     openproduct(id: any){
         this.router.navigate(['/product', id]);

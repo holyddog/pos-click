@@ -1,0 +1,47 @@
+<div class="row">
+    <h2>Order Detail</h2>
+</div>
+<div class="paper4">
+<div class="row">        
+        <div class="col-sm-12">
+            
+            <div class="paper">
+            <h5>*Please fill personal detail</h5>
+            <p>Name</p>
+            <input class="form-control" #names placeholder="Enter name"><br/>
+             <p>Email</p>
+            <input class="form-control" #emails placeholder="Enter email"><br/>
+            <p>Billing Address</p>
+            <textarea rows="4" cols="50" class="form-control" #addresss placeholder="Enter address"></textarea><br/>
+            <p>Shipping Address</p>
+            <textarea rows="4" cols="50" class="form-control" #shipaddresss placeholder="Enter shipping address"></textarea><br/>
+            <br/>
+            <p>{{errortext}}</p>
+            </div>
+            
+        </div>
+        <div id="content" class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+    <div class="container"> 
+        <br/>
+        <div class="row">
+        <div class="col-sm-2">
+            <button type="button" class="w3-button btn1 btn-md" (click)="makeOrder(addresss.value,names.value,emails.value,shipaddresss.value)">CHECK</button>
+             
+        </div>
+         <span *ngIf="surebuying">
+            <div class="col-sm-2">
+            <!-- Trigger the modal with a button -->
+                <button type="button" class="w3-button btn1 btn-md" data-toggle="modal" data-target="#myModal" (click)="sendata()">
+                    CONFIRM</button>
+            </div>
+         </span>
+        </div>
+         <div class="row"> 
+            <p>can't click? <a (click)="reloadpage()">reload</a></p>
+         </div>
+    </div>
+

@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
         return;
     }
     backtohome(){
-         this.router.navigate(['/']);
+         this.router.navigate(['/home/1']);
          this.checkCartvalue();
          $('aside').removeClass('active');
     }
@@ -81,5 +81,10 @@ export class AppComponent implements OnInit {
     }
     backtobefore(){
         window.history.back();
+    }
+    viewtable = true;
+    changeview(){
+        this.viewtable = !this.viewtable;
+        return this.viewtable;
     }
 }

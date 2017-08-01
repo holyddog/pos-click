@@ -1,0 +1,76 @@
+<div class="row">        
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-4"><h3>Order Selected</h3></div>
+                <span *ngIf="numproduct > 0">
+                    <div class="col-sm-4 offset-sm-4"><button (click)="deleteall()" class="w3-button btn1 btn-md">RESET</button></div>
+                </span>
+            </div>
+            
+            <span *ngIf="numproduct > 0">
+                <div class="paper4">
+            <div *ngFor="let c of products" class="menu-cat paper" >
+                <div class="row"> 
+                    <div class="col-sm-6">
+                     <br/>
+                    <p>Name: {{c.name}} </p>
+                    <p>Price: {{c.defaultPrice}} Baht</p>
+                    <p>Id: {{c.id}}</p>
+                    <p>Sku: {{c.rProductDetails[0].sku}}</p>
+                    <p>MerchantId: {{c.merchantId}}</p>
+                    <br/>
+                    
+                </div>
+                <div class="col-sm-6">
+                    <br/>
+                    <img [src]="addpic(c)" style ="max-width:250px;max-height:250px;"/>
+                    <br/>
+                    <br/>
+                    <br/>
+                </div>
+
+                    &nbsp;<button (click)="openproduct(c.id)" class="w3-button btn1 btn-md">DETAIL</button><a>&nbsp;</a><button (click)="delete(c.id)" class="w3-button btn1 btn-md">DELETE</button>
+                
+                </div>
+                
+                
+                
+                
+            </div>
+            </div>
+            </span>
+            
+        </div >
+        <div id="content" class="container-fluid">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+<span *ngIf="numproduct > 0">
+    <div class="row " >
+        <div class="col-md-6 paper4"> 
+            <div class="paper">
+                <h3 style="text-align:left">Total Price :     {{ priceorder?.masterOrderSubTotal }} Baht</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row "> 
+        <br/>
+            <div class="col-md-3">
+                <button type="button" class="w3-button btn1 btn-md bigt" (click)="open()">BUY</button>
+                <p>can't click? <a (click)="reloadpage()">reload</a></p>
+            </div>
+
+        <br/>
+    </div>
+</span>    
+<span *ngIf="numproduct == 0">
+    <div class="paper4">
+    <div class="container menu-cat paper2 text-white">
+        <h2>There are no items in your order.</h2>
+        <div class="col-md-4 offset-sm-4">
+            <button type="button" class="w3-button btn1 btn-md" (click)="backtohome()">CONTINUE SHOPPING</button>
+        </div>
+    </div>
+    </div>
+</span>

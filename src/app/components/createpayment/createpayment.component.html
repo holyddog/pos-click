@@ -1,0 +1,175 @@
+<!--<div class="container">
+    <h2>Payment</h2>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Credit card number</p>
+            <input #cardnumber placeholder="Your credit card number">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Cardholder name</p>
+            <input #cardholder placeholder="Your cardholder name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <p>Expire date</p>
+            <input #expire placeholder="MMYYYY">
+        </div>
+        <div class="col-sm-2">
+            <p>CVV</p>
+            <input #cvv placeholder="xxx">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>Cardholder's email</p>
+            <input #email placeholder="Your email">
+        </div>
+    </div>
+    <br/>
+    <button class="w3-button btn-danger btn-md" (click)="userlogin(usernames.value,passwords.value)">Login</button>
+    <span *ngIf="merchants">
+        <button class="w3-button btn-danger btn-md" (click)="merchantlogin(usernames.value,passwords.value)">Merchant Login</button>
+    </span>
+    <p>You're merchant? <a (click)="openmerchantlogin()"><u>click this</u></a></p>
+</div>-->
+<!--<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+             <iframe width="1000" height="1000"  src="http://localhost:8081/2c2p/SecurePay_3D_Demo_v1.6.6/SecurePay_3D_Demo_v1.6.6/demo_3d.html" frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+   
+</div>-->
+<!--<div>
+            <p>Version</p><input type="text"  placeholder="Version" #version value="6.9"><br/>
+        <p>merchant_id</p> <input type="text"  placeholder="merchant_id" #merchant_id value="764764000000074"><br/>
+        <p>payment_description</p> <input type="text"  placeholder="payment_description" #payment_description value="poom"><br/>
+         <p>order_id</p><input type="text"  placeholder="order_id" #order_id value="00000000010000091206"><br/>
+         <p>invoice_no</p><input type="text"  placeholder="invoice_no" #invoice_no value="1"><br/>
+        <p>currency</p> <input type="text"  placeholder="currency" #currency value="764"><br/>
+        <p>amount</p> <input type="text"  placeholder="amount" #amount value="000000000100"><br/>
+        <p>customer_email</p> <input type="text"  placeholder="customer_email" #customer_email value="kitipoom.se@gmail.com"><br/>
+         <p>pay_category_id</p><input type="text"  placeholder="pay_category_id" #pay_category_id value="6"><br/>
+         <p>promotion</p><input type="text"  placeholder="promotion" #promotion value=""><br/>
+        <p>user_defined_1</p> <input type="text"  placeholder="user_defined_1" #user_defined_1 value=""><br/>
+         <p>user_defined_2</p><input type="text"  placeholder="user_defined_2" #user_defined_2 value=""><br/>
+         <p>user_defined_3</p><input type="text"  placeholder="user_defined_3" #user_defined_3 value=""><br/>
+         <p>user_defined_4</p><input type="text"  placeholder="user_defined_4" #user_defined_4 value=""><br/>
+         <p>user_defined_5</p><input type="text"  placeholder="user_defined_5" #user_defined_5 value=""><br/>        
+         <p>result_url_1</p><input type="text"  placeholder="result_url_1" #result_url_1 value=""><br/>
+         <p>result_url_2</p><input type="text"  placeholder="result_url_2" #result_url_2 value=""><br/>        
+        <p>request_3ds</p> <input type="text"  placeholder="request_3ds" #request_3ds value="Y"><br/>
+        <p>hash =  {{hashvalue}}</p>   
+</div>
+    <button (click)="hashing(version.value,merchant_id.value,payment_description.value,order_id.value,invoice_no.value,currency.value,amount.value,customer_email.value,pay_category_id.value,promotion.value,user_defined_1.value,user_defined_2.value,user_defined_3.value,user_defined_4.value,user_defined_5.value,result_url_1.value,result_url_2.value,request_3ds.value)"> CClick</button>
+<p>Click the button to display a random number.</p>
+<p>{{texx}}</p>
+<button onclick="myFunction()">Try it</button>
+<button onclick="myFunction1()">Try it1</button>
+<p id="demo"></p>-->
+<!--
+        <div class="row">
+        <div class="col-md-8 paper">
+                <h5>Version: {{versionno}}</h5>
+                <h5>merchant_id: {{merchantid}}</h5> 
+                <h5>payment_description: {{paymentdescription}}</h5>
+                <h5>order_id: {{orderid}}</h5>
+                <h5>invoice_no: {{invoiceno}}</h5>
+                <h5>currency: {{currencyno}}</h5> 
+                <h5>amount: {{paymentdetail.masterOrderTotalAmount}}</h5>
+                <h5>customer_email: {{customeremail}}</h5> 
+                <h5>pay_category_id: {{paycategoryid}}</h5>
+ 
+                <h5>promotion: {{promotionno}}</h5>
+                <h5>user_defined_1: {{userdefined1}}</h5>
+                <h5>user_defined_2: {{userdefined2}}</h5>
+                <h5>user_defined_3: {{userdefined3}}</h5>
+                <h5>user_defined_4: {{userdefined4}}</h5>
+                <h5>user_defined_5: {{userdefined5}}</h5>
+                <h5>result_url_1: {{resulturl1}}</h5>
+                <h5>result_url_2: {{resulturl2}}</h5>
+                <h5>request_3ds: {{request3ds}}</h5> 
+                <h5>hash: {{hashvalue}}</h5>
+        </div>
+    </div>
+-->
+<div >
+    <div class="row">
+        <div class="col-sm-4">
+            <h2>Detail</h2>
+        </div>
+        <div class="col-sm-4 offset-sm-4">
+            <input type="button" class="w3-button btn1 btn-md "  value="Print this page" onClick="window.print()"><i class="material-icons">print</i>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="paper4">             
+            <div class="paper">        
+                 
+                <h5>Orderid: {{orderid}}</h5>
+                <h5>Name: {{paymentdescription}}</h5>
+                <h5>Email: {{customeremail}}</h5> 
+
+                <p>BillingAddress:  {{paymentdetail.billingAddress}}</p>
+                <p>ShippingAddress:  {{paymentdetail.shippingAddress}}</p>
+
+                <h5>result_url_1: {{resulturl1}}</h5>
+                <h5>result_url_2: {{resulturl2}}</h5>
+                <br/>
+                <div class="paper">
+                    <h3>Amount: {{paymentdetail.masterOrderTotalAmount}}</h3>
+                </div>
+
+                <!--
+                <h5>Version: {{versionno}}</h5>
+                <h5>Merchantid: {{merchantid}}</h5>
+                <h5>invoice_no: {{invoiceno}}</h5>
+                <h5>currency: {{currencyno}}</h5> 
+                <h5>pay_category_id: {{paycategoryid}}</h5>
+
+                <h5>promotion: {{promotionno}}</h5>
+                <h5>user_defined_1: {{userdefined1}}</h5>
+                <h5>user_defined_2: {{userdefined2}}</h5>
+                <h5>user_defined_3: {{userdefined3}}</h5>
+                <h5>user_defined_4: {{userdefined4}}</h5>
+                <h5>user_defined_5: {{userdefined5}}</h5>
+                <h5>result_url_1: {{resulturl1}}</h5>
+                <h5>result_url_2: {{resulturl2}}</h5>
+                <h5>request_3ds: {{request3ds}}</h5> 
+                <h5>hash: {{hashvalue}}</h5>-->
+                </div>
+             </div>
+        </div>
+    </div>
+<form  ngNoForm  style="display: inline-block" name="payFormCcard" method='POST' action="https://demo2.2c2p.com/2C2PFrontEnd/RedirectV3/payment" #form > 
+        <input (click)="form.submit()" class="submit_button w3-button btn1 btn-md" type="submit" value="Submit" >
+                <input type="hidden" class="form-control"  placeholder="Version" id="version" name="version" #version  value="{{versionno}}" ><br/>
+                <input type="hidden" class="form-control"  placeholder="merchant_id" id="merchant_id" name="merchant_id" #merchant_id value="{{merchantid}}"><br/>
+                <input type="hidden" class="form-control"  placeholder="payment_description" id="payment_description" name="payment_description" #payment_description value="{{paymentdescription}}"><br/>
+                <input type="hidden" class="form-control"  placeholder="order_id" id="order_id" name="order_id" #order_id value="{{orderid}}"><br/>
+                <input type="hidden" class="form-control"  placeholder="invoice_no" id="invoice_no" name="invoice_no" #invoice_no value="{{invoiceno}}"><br/>
+                <input type="hidden" class="form-control" placeholder="currency" id="currency" name="currency" #currency value="{{currencyno}}"><br/>
+                <input type="hidden" class="form-control" placeholder="amount" id ="amount" name="amount" #amount value="{{amountno}}"><br/>
+                <input type="hidden" class="form-control" placeholder="customer_email" id="customer_email" name="customer_email" #customer_email value="{{customeremail}}"><br/>
+                <input type="hidden" class="form-control" placeholder="pay_category_id" id="pay_category_id" name="pay_category_id" #pay_category_id value="{{paycategoryid}}"><br/>
+ 
+                <input type="hidden" class="form-control" placeholder="promotion" id="promotion" name="promotion" #promotion value="{{promotionno}}"><br/>
+                <input type="hidden" class="form-control" placeholder="user_defined_1" id="user_defined_1" name="user_defined_1" #user_defined_1 value="{{userdefined1}}"><br/>
+                <input type="hidden" class="form-control" placeholder="user_defined_2" id="user_defined_2" name="user_defined_2" #user_defined_2 value="{{userdefined2}}"><br/>
+                <input type="hidden" class="form-control" placeholder="user_defined_3" id="user_defined_3" name="user_defined_3" #user_defined_3 value="{{userdefined3}}"><br/>
+                <input type="hidden" class="form-control" placeholder="user_defined_4" id="user_defined_4" name="user_defined_4" #user_defined_4 value="{{userdefined4}}"><br/>
+                <input type="hidden" class="form-control" placeholder="user_defined_5" id="user_defined_5" name="user_defined_5" #user_defined_5 value="{{userdefined5}}"><br/>        
+                <input type="hidden" size="35" class="form-control" placeholder="result_url_1" id="result_url_1" name="result_url_1" #result_url_1 value="{{resulturl1}}"><br/>
+                <input type="hidden" size="35" class="form-control" placeholder="result_url_2" id='result_url_2' name="result_url_2" #result_url_2 value="{{resulturl2}}"><br/>        
+                <input type="hidden" class="form-control" placeholder="request_3ds" id="request_3ds" name="request_3ds" #request_3ds value="{{request3ds}}"><br/>
+                <input type="hidden" class="form-control" placeholder="hash_value" id='hash_value' name='hash_value' #hash_value value="{{hashvalue}}"><br/>   
+
+</form>
+        <!--<button (click)="hashing(version.value,merchant_id.value,payment_description.value,order_id.value,invoice_no.value,currency.value,amount.value,customer_email.value,pay_category_id.value,promotion.value,user_defined_1.value,user_defined_2.value,user_defined_3.value,user_defined_4.value,user_defined_5.value,result_url_1.value,result_url_2.value,request_3ds.value)"> CClick</button>
+            -->
+</div>

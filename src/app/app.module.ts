@@ -14,16 +14,22 @@ import { OrderComponent } from './components/order/order.component';
 import { CreateorderComponent } from './components/createorder/createorder.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { SearchorderComponent} from './components/searchorder/searchorder.component';
+import { SearchordermerchantComponent} from './components/searchorder/searchordermerchant.component';
 import { CreateproductComponent } from './components/createproduct/createproduct.component';
 import {HomecategoryComponent} from'./components/homecategory/homecategory.component';
 import {CreatepaymentComponent} from './components/createpayment/createpayment.component';
+import {SearchorderdetailmerchantComponent} from './components/searchorderdetail/searchorderdetailmerchant.component';
+import {SearchorderdetailComponent} from './components/searchorderdetail/searchorderdetail.component';
+
 
 import { CategoryService } from './services/category.service';
 import { ProductService } from './services/product.service';
 import { DetailproductService } from './services/detailproduct.service';
 import { OrderpriceService } from './services/orderprice.service';
+import { OrderdetailService } from './services/orderdetail.service';
 import { CreateorderService } from './services/createorder.service';
 import { SearchorderService } from './services/searchorder.service';
+import { SearchordermerchantService } from './services/searchordermerchant.service';
 import { CreateproductService } from './services/createproduct.service';
 import { MerchantService } from './services/merchant.service';
 import { MarketplacecategoryService } from './services/marketplacecategory.service';
@@ -39,10 +45,13 @@ import { MarketplacecategoryService } from './services/marketplacecategory.servi
         CreateorderComponent,
         PaymentComponent,
         SearchorderComponent,
+        SearchordermerchantComponent,
         ProductdetailComponent,
         CreateproductComponent,
         HomecategoryComponent,
-        CreatepaymentComponent
+        CreatepaymentComponent,
+        SearchorderdetailmerchantComponent,
+        SearchorderdetailComponent
     ],
     imports: [
         BrowserModule,
@@ -63,12 +72,15 @@ import { MarketplacecategoryService } from './services/marketplacecategory.servi
             { path: 'createorder' , component: CreateorderComponent},
             { path: 'payment' , component: PaymentComponent},
             { path: 'search', component: SearchorderComponent },
+            { path: 'searchmerchant', component: SearchordermerchantComponent },
             { path: 'newproduct', component: CreateproductComponent },
             { path: 'homecategory', component: HomecategoryComponent },
             { path: 'createpayment', component: CreatepaymentComponent },
+            { path: 'merchantorderdetail', component: SearchorderdetailmerchantComponent },
+            { path: 'customerorderdetail', component: SearchorderdetailComponent },
         ])
     ],
-    providers: [[CategoryService],[ProductService],[DetailproductService],[OrderpriceService],[CreateorderService],[SearchorderService],[CreateproductService],[MerchantService],[MarketplacecategoryService]],
+    providers: [[CategoryService],[ProductService],[DetailproductService],[OrderpriceService],[CreateorderService],[SearchorderService],[SearchordermerchantService],[CreateproductService],[MerchantService],[MarketplacecategoryService],[OrderdetailService]],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
